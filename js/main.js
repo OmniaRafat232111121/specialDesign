@@ -1,3 +1,21 @@
+//check color in localstorage
+let mainColors = localStorage.getItem("color_option");
+
+if (mainColors !== null) {
+  document.documentElement.style.setProperty('--main--color', mainColors);
+   //remove active class from ColorList
+   document.querySelectorAll(".colors-list li").forEach(Element=>{
+    Element.classList.remove("active");
+    if(Element.dataset.color== mainColors){
+      //Add active Class
+    Element.classList.add("active")
+    }
+  
+     })
+     //add activeClass on element
+     
+}
+
 let landingPage = document.querySelector(".landing-page");
 let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
 setInterval(()=>{
@@ -18,11 +36,76 @@ document.querySelector(".toggle-settings .fa-gear").onclick = function () {
     
   };
 //switch color
+const randomBackgroundEL=document.querySelectorAll(".random-backgrounds span");
+randomBackgroundEL.forEach(span => {
+  span.addEventListener("click",(e)=>{
+   //remove active Class from All Children
+   e.target.parentElement.querySelectorAll(".active").forEach(Element=>{
+  Element.classList.remove("active");
+
+
+   })
+    // add active class on tareget
+   e.target.classList.add("active")
+  })
+  
+});
+//Random BackgroundOption
 const colorList=document.querySelectorAll(".colors-list li");
 colorList.forEach(li => {
   li.addEventListener("click",(e)=>{
     document.documentElement.style.setProperty('--main--color', e.target.dataset.color);
-   localStorage.setItem("color-option",e.target.dataset.color)
+   localStorage.setItem("color-option",e.target.dataset.color);
+
+   //remove active Class from All Children
+   e.target.parentElement.querySelectorAll(".active").forEach(Element=>{
+  Element.classList.remove("active");
+
+   })
+    // add active class on tareget
+   e.target.classList.add("active")
   })
   
 });
+let background_option=true;
+
+
+
+
+
+
+
+// Select Skills Selector
+let ourSkills = document.querySelector(".skills");
+
+
+
+window.onscroll = function () {
+
+  // // Skills Offset Top
+  // let skillsOffsetTop = ourSkills.offsetTop;
+
+  // // Skills Outer Height
+  // let skillsOuterHeight = ourSkills.offsetHeight;
+
+  // // Window Height
+  // let windowHeight = this.innerHeight;
+
+  // Window ScrollTop
+  let windowScrollTop = this.pageYOffset;
+
+  if (windowScrollTop >  (ourSkills.offsetTop - 200)) {
+
+    let allSkills = document.querySelectorAll(".skill-box .skill-progress span");
+    
+    console.log(allSkills)
+
+    allSkills.forEach(skill => {
+
+      skill.style.width = skill.dataset.progress;
+
+    });
+
+  }
+
+};
