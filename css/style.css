@@ -324,3 +324,75 @@ margin: 0;
   transition: all .5s;
 }
 /*end-skills*/
+
+
+/*start-gallery*/
+.gallery {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.gallery h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main--color);
+  margin: 0 0 50px;
+  text-align: center;
+}
+.gallery .images-box {
+  text-align: center;
+}
+.gallery .images-box img {
+  width: 250px;
+  padding: 3px;
+  background-color: #F6F6F6;
+  border: 1px solid #CCC;
+  margin: 5px;
+  cursor: pointer;
+}
+.overlay-popup{
+  background-color: rgb(56, 54, 54,0.3);
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+.pop-Box{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  padding: 20px;
+  z-index: 1001;
+}
+.popup-Box h3 {
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 20px;
+  color: var(--main--color);
+}
+.pop-Box img{
+  max-width: 100%;
+}
+.close-button{
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: var(--main--color);
+  color: #FFF;
+  width: 50px;
+  height: 50px;
+  line-height: 40px;
+  text-align: center;
+  transform: translate(-20%,10%);
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Arial, Tahoma;
+  border-radius: 50%;
+
+}
