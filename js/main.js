@@ -161,3 +161,10 @@ document.addEventListener("click", function (e) {
   }
 
 });
+/*toggle-menu*/
+let tLinks = document.querySelector(".links");
+let toggle=document.querySelector(".toggle-menu");
+toggle.addEventListener("click",function(e){
+  e.stopPropagation();
+  tLinks.classList.toggle("open");
+})
